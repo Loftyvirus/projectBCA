@@ -8,6 +8,10 @@ const QuestionPaper = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   { timestamps: false, tableName: "question_papers" }
 );
