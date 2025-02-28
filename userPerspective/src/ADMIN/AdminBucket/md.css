@@ -1,0 +1,146 @@
+/* Markdown Container */
+.markdown-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.markdown-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.markdown-container p {
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+}
+
+.markdown-container ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-container ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-container blockquote {
+  border-left: 4px solid #007bff;
+  padding-left: 1rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+  background-color: #f1f8ff;
+}
+
+.markdown-container code {
+  background-color: #f4f4f4;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #333;
+}
+
+.markdown-container pre {
+  background-color: #282c34;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+.markdown-container a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.markdown-container a:hover {
+  text-decoration: none;
+  color: #0056b3;
+}
+
+.markdown-container table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.markdown-container th,
+.markdown-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.markdown-container th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.markdown-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Textarea Container */
+.textarea-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.textarea-container textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.textarea-container textarea:focus {
+  background-color: #fff;
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Preview Container */
+.preview-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.placeholder-text {
+  color: #999;
+  text-align: center;
+}
+
+/* General Container */
+.container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: "Arial", sans-serif;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+}
