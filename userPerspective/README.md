@@ -1,9 +1,5 @@
 # Markdown Rendering Project
 
-### Custom Markdown Styles
-
-The `styles.css` contains custom styles to enhance the rendering of different markdown elements. Here are some examples:
-
 - **Headings**: Large and bold headers.
 - **Paragraphs**: Proper line spacing and left alignment.
 - **Lists**: Support for ordered and unordered lists.
