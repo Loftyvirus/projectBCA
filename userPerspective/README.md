@@ -1,1 +1,0 @@
-# now properly setup a json in the static method to distinctify the subjects basedo on semester and useing fetch update the rule on seletion menu in IncludPaper component as now altering the table will harm our sql structure somehow

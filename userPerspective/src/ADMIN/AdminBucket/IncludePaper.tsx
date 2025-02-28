@@ -7,6 +7,7 @@ import useAuth from "../contexts/userAuth";
 interface Subject {
   id: number;
   subject_name: string;
+  semester_id: number; // Adding semesterid to filter subjects by semester
 }
 
 interface Semester {
@@ -28,8 +29,9 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
 };
 
 const IncludePaper: React.FC = () => {
-  const { token } = useAuth(); // Access the token from context
+  const { token } = useAuth(); 
   const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [filteredSubjects, setFilteredSubjects] = useState<Subject[]>([]); 
   const [semesters, setSemesters] = useState<Semester[]>([]);
   const [seasons, setSeasons] = useState<Season[]>([]);
   const [selectedSubject, setSelectedSubject] = useState<number | string>("");
@@ -39,7 +41,7 @@ const IncludePaper: React.FC = () => {
   const [paragraph, setParagraph] = useState<string>("");
   const [markdownInput, setMarkdownInput] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
-  const [submitLoading, setSubmitLoading] = useState<boolean>(false); // for submit loading
+  const [submitLoading, setSubmitLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
   // Fetch data from APIs
@@ -61,7 +63,9 @@ const IncludePaper: React.FC = () => {
           throw new Error("Failed to fetch data");
         }
 
-        setSubjects(await subjectsResponse.json());
+        const fetchedSubjects = await subjectsResponse.json();
+        setSubjects(fetchedSubjects); 
+        setFilteredSubjects(fetchedSubjects); 
         setSemesters(await semestersResponse.json());
         setSeasons(await seasonsResponse.json());
       } catch (error) {
@@ -73,6 +77,18 @@ const IncludePaper: React.FC = () => {
 
     fetchData();
   }, []); // Runs only once
+
+  // Effect to filter subjects based on the selected semester
+  useEffect(() => {
+    if (selectedSemester) {
+      const filtered = subjects.filter(
+        (subject) => subject.semester_id === Number(selectedSemester)
+      );
+      setFilteredSubjects(filtered); // Update filtered subjects
+    } else {
+      setFilteredSubjects(subjects); // Reset to all subjects if no semester is selected
+    }
+  }, [selectedSemester, subjects]);
 
   useEffect(() => {
     if (selectedSubject && selectedSemester && selectedSeason && year) {
@@ -225,10 +241,10 @@ const IncludePaper: React.FC = () => {
             value={selectedSubject}
             onChange={(e) => setSelectedSubject(e.target.value)}
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            disabled={subjects.length === 0}
+            disabled={filteredSubjects.length === 0}
           >
             <option value="">Select Subject</option>
-            {subjects.map((subject) => (
+            {filteredSubjects.map((subject) => (
               <option key={subject.id} value={subject.id}>
                 {subject.subject_name}
               </option>

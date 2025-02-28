@@ -22,10 +22,15 @@ export const getSeasons = async (req, res) => {
   }
 };
 
-// Controller to fetch all subjects
+//updated getting subject so tha checksum can include specific subjct at specific semester
 export const getSubjects = async (req, res) => {
   try {
-    const subjects = await Subject.findAll();
+    const subjects = await Subject.findAll({
+      include: {
+        model: Semester,
+        attributes: ["id", "semester_number"],
+      },
+    });
     res.status(200).json(subjects);
   } catch (error) {
     console.error(error);

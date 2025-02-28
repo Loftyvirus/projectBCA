@@ -4,8 +4,11 @@ import Subject from "./subject.js";
 import QuestionPaper from "./questionPaper.js";
 
 // Defining associations explicitly with foreign keys
-Semester.hasMany(QuestionPaper, { foreignKey: "semester_id" });
-QuestionPaper.belongsTo(Semester, { foreignKey: "semester_id" });
+
+Semester.hasMany(Subject, { foreignKey: "semester_id" });
+
+//subject has semester's foreign key now
+Subject.belongsTo(Semester, { foreignKey: "semester_id" });
 
 Season.hasMany(QuestionPaper, { foreignKey: "season_id" });
 QuestionPaper.belongsTo(Season, { foreignKey: "season_id" });
