@@ -7,18 +7,52 @@
   margin-top: 20px;
 }
 
+.markdown-container h1,
+.markdown-container h2,
+.markdown-container h3,
+.markdown-container h4,
+.markdown-container h5,
+.markdown-container h6 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
 .markdown-container h1 {
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #333;
-  text-align: center;
+}
+
+.markdown-container h2 {
+  font-size: 1.75rem;
+}
+
+.markdown-container h3 {
+  font-size: 1.5rem;
+}
+
+.markdown-container h4 {
+  font-size: 1.25rem;
+}
+
+.markdown-container h5 {
+  font-size: 1.125rem;
+}
+
+.markdown-container h6 {
+  font-size: 1rem;
 }
 
 .markdown-container p {
   line-height: 1.6;
   color: #555;
   text-align: left;
+  margin-bottom: 0; /* Removed bottom margin */
+}
+
+.markdown-container br {
+  display: block;
+  content: "";
+  margin-bottom: 1rem; /* Adds a little spacing after each <br> for separation */
 }
 
 .markdown-container ul {
@@ -47,7 +81,7 @@
   padding: 2px 5px;
   border-radius: 4px;
   font-family: monospace;
-  color: #333;
+  color: red;
 }
 
 .markdown-container pre {
@@ -91,56 +125,47 @@
   background-color: #f9f9f9;
 }
 
-/* Textarea Container */
-.textarea-container {
-  background-color: #fff;
-  border: 1px solid #ddd;
+/* Additional Markdown Enhancements */
+
+/* Images */
+.markdown-container img {
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
 }
 
-.textarea-container textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
+/* Horizontal rule */
+.markdown-container hr {
   border: 1px solid #ddd;
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-  background-color: #f9f9f9;
-  font-family: "Arial", sans-serif;
-  transition: background-color 0.3s;
+  margin: 2rem 0;
+  background-color: #ddd;
 }
 
-.textarea-container textarea:focus {
-  background-color: #fff;
-  border-color: #007bff;
-  outline: none;
+/* Definition Lists */
+.markdown-container dl {
+  margin-bottom: 1rem;
 }
 
-/* Preview Container */
-.preview-container {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
+.markdown-container dt {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.placeholder-text {
-  color: #999;
-  text-align: center;
+.markdown-container dd {
+  margin-left: 1.5rem;
+  color: #555;
 }
 
-/* General Container */
-.container {
-  background-color: #ffffff;
-  min-height: 100vh;
-  padding: 40px;
-  font-family: "Arial", sans-serif;
+/* Strikethrough */
+.markdown-container del {
+  color: #f00;
+  text-decoration: line-through;
 }
 
-h2 {
-  color: #333;
-  text-align: center;
+/* Inline images */
+.markdown-container img.inline {
+  max-width: 20%;
+  display: inline-block;
+  margin-right: 10px;
 }

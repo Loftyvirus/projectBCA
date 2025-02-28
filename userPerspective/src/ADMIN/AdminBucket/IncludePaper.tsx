@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import "./md.css";
 import useAuth from "../contexts/userAuth";
+import rehypeRaw from "rehype-raw";
 
 interface Subject {
   id: number;
@@ -23,15 +24,17 @@ interface Season {
 const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
   return (
     <div className="markdown-container">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+        {content}
+      </ReactMarkdown>
     </div>
   );
 };
 
 const IncludePaper: React.FC = () => {
-  const { token } = useAuth(); 
+  const { token } = useAuth();
   const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [filteredSubjects, setFilteredSubjects] = useState<Subject[]>([]); 
+  const [filteredSubjects, setFilteredSubjects] = useState<Subject[]>([]);
   const [semesters, setSemesters] = useState<Semester[]>([]);
   const [seasons, setSeasons] = useState<Season[]>([]);
   const [selectedSubject, setSelectedSubject] = useState<number | string>("");
@@ -64,8 +67,8 @@ const IncludePaper: React.FC = () => {
         }
 
         const fetchedSubjects = await subjectsResponse.json();
-        setSubjects(fetchedSubjects); 
-        setFilteredSubjects(fetchedSubjects); 
+        setSubjects(fetchedSubjects);
+        setFilteredSubjects(fetchedSubjects);
         setSemesters(await semestersResponse.json());
         setSeasons(await seasonsResponse.json());
       } catch (error) {
