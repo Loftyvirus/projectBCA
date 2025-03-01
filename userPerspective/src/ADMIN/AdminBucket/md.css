@@ -1,83 +1,66 @@
 /* Markdown Container */
 .markdown-container {
-  background-color: #f9f9f9;
+  background: #f9f9f9;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
+/* Headings */
 .markdown-container h1,
 .markdown-container h2,
 .markdown-container h3,
-.markdown-container h4,
 .markdown-container h5,
 .markdown-container h6 {
   color: #333;
   font-weight: bold;
-  margin-bottom: 0.8rem;
 }
 
 .markdown-container h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
-
 .markdown-container h2 {
   font-size: 1.75rem;
 }
-
 .markdown-container h3 {
   font-size: 1.5rem;
 }
-
 .markdown-container h4 {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
-
 .markdown-container h5 {
   font-size: 1.125rem;
 }
-
 .markdown-container h6 {
   font-size: 1rem;
 }
 
+/* Paragraphs */
 .markdown-container p {
   line-height: 1.6;
   color: #555;
-  text-align: left;
-  margin-bottom: 0; /* Removed bottom margin */
 }
 
-.markdown-container br {
-  display: block;
-  content: "";
-  margin-bottom: 1rem; /* Adds a little spacing after each <br> for separation */
-}
-
-.markdown-container ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
+/* Lists */
+.markdown-container ul,
 .markdown-container ol {
-  list-style-type: decimal;
   padding-left: 1.5rem;
-  margin-bottom: 1rem;
+  list-style-type: disc;
 }
 
+/* Blockquote */
 .markdown-container blockquote {
   border-left: 4px solid #007bff;
   padding-left: 1rem;
   color: #666;
   font-style: italic;
-  margin-bottom: 1rem;
-  background-color: #f1f8ff;
+  background: #f1f8ff;
 }
 
+/* Code */
 .markdown-container code {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   padding: 2px 5px;
   border-radius: 4px;
   font-family: monospace;
@@ -85,7 +68,7 @@
 }
 
 .markdown-container pre {
-  background-color: #282c34;
+  background: #282c34;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -93,6 +76,7 @@
   font-family: monospace;
 }
 
+/* Links */
 .markdown-container a {
   color: #007bff;
   text-decoration: underline;
@@ -103,6 +87,7 @@
   color: #0056b3;
 }
 
+/* Tables */
 .markdown-container table {
   border-collapse: collapse;
   width: 100%;
@@ -117,15 +102,13 @@
 }
 
 .markdown-container th {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   font-weight: bold;
 }
 
 .markdown-container tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background: #f9f9f9;
 }
-
-/* Additional Markdown Enhancements */
 
 /* Images */
 .markdown-container img {
@@ -135,37 +118,14 @@
   margin-bottom: 1rem;
 }
 
-/* Horizontal rule */
+/* Horizontal Rule */
 .markdown-container hr {
   border: 1px solid #ddd;
   margin: 2rem 0;
-  background-color: #ddd;
-}
-
-/* Definition Lists */
-.markdown-container dl {
-  margin-bottom: 1rem;
-}
-
-.markdown-container dt {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.markdown-container dd {
-  margin-left: 1.5rem;
-  color: #555;
 }
 
 /* Strikethrough */
 .markdown-container del {
-  color: #f00;
+  color: red;
   text-decoration: line-through;
-}
-
-/* Inline images */
-.markdown-container img.inline {
-  max-width: 20%;
-  display: inline-block;
-  margin-right: 10px;
 }

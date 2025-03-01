@@ -9,6 +9,8 @@ import ProtectedRoute from "./protection/ProtectedRoute";
 import AdminDashboard from "./ADMIN/AdminBucket/AdminDashboard";
 import AvailableChecksums from "./ADMIN/AdminBucket/AvailableChecksums";
 import IncludePaper from "./ADMIN/AdminBucket/IncludePaper";
+import ViewQuestionPaper from "./students/ViewQuestions";
+import AllQuestions from "./students/AllQuestions";
 function App() {
   return (
     <>
@@ -30,6 +32,9 @@ function App() {
             <Route path="include-paper" element={<IncludePaper />} />
           </Route>
         </Route>
+        {/* public view */}
+        <Route path="/all-questions" element={<AllQuestions />} />
+        <Route path="view-question-paper/:id" element={<ViewQuestionPaper />} />
       </Routes>
     </>
   );
